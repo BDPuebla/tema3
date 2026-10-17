@@ -1,0 +1,27 @@
+site_name: Bases de Datos - Tema 3
+site_url: https://BDPuebla.github.io/tema3
+theme:
+  name: material
+  palette:
+    primary: green
+    accent: light green
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.footer
+extra_css:
+  - css/styles.css
+nav:
+  - Home: index.md
+  - Introducción: introduccion.md
+  - Diseño de Bases de Datos: 
+      - Introducción: diseno-bd-introduccion.md
+      - Tablas y claves: diseno-bd-tablas.md
+      - Atributos: diseno-bd-atributos.md
+  - Referencias: referencias.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+copyright: Copyright &copy; 2026 Víctor Suárez. IES Puebla de Vicar.  
