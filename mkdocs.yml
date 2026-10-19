@@ -19,6 +19,10 @@ nav:
       - Introducción: diseno-bd-introduccion.md
       - Tablas y claves: diseno-bd-tablas.md
       - Atributos: diseno-bd-atributos.md
+  - Lenguaje de Consulta Estructurado (SQL):
+      - Introducción: sql-introduccion.md
+      - Tipo de Sentencias: sql-tipo-sentencias.md
+      - Sentencias de definición de datos: sql-sentencias-definicion-datos.md
   - Referencias: referencias.md
 markdown_extensions:
   - admonition
