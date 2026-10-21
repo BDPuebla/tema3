@@ -23,6 +23,10 @@ nav:
       - Introducción: sql-introduccion.md
       - Tipo de Sentencias: sql-tipo-sentencias.md
       - Sentencias de definición de datos: sql-sentencias-definicion-datos.md
+  - Creación de tablas:
+      - Introducción: creacion-tablas-introduccion.md
+      - Creación de tablas: creacion-tablas.md
+      - Ejemplo de Creación de tablas: creacion-tablas-ejemplo.md
   - Referencias: referencias.md
 markdown_extensions:
   - admonition
