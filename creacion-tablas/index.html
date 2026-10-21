@@ -1,0 +1,1314 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://BDPuebla.github.io/tema3/creacion-tablas/">
+      
+      
+        <link rel="prev" href="../creacion-tablas-introduccion/">
+      
+      
+        <link rel="next" href="../creacion-tablas-ejemplo/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Creación de tablas - Bases de Datos - Tema 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/styles.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#creacion-de-tablas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bases de Datos - Tema 3" class="md-header__button md-logo" aria-label="Bases de Datos - Tema 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bases de Datos - Tema 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Creación de tablas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bases de Datos - Tema 3" class="md-nav__button md-logo" aria-label="Bases de Datos - Tema 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bases de Datos - Tema 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diseño de Bases de Datos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Diseño de Bases de Datos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diseno-bd-introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diseno-bd-tablas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tablas y claves
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diseno-bd-atributos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atributos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lenguaje de Consulta Estructurado (SQL)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lenguaje de Consulta Estructurado (SQL)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-tipo-sentencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipo de Sentencias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql-sentencias-definicion-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sentencias de definición de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creación de tablas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Creación de tablas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creacion-tablas-introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creación de tablas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creación de tablas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-una-tabla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estructura de una tabla
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de una tabla">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Restricciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not Null
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unique
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-increment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto Increment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricciones-de-varias-columnas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricciones de varias columnas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nombrar-restricciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nombrar restricciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creacion-tablas-ejemplo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejemplo de Creación de tablas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-una-tabla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estructura de una tabla
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de una tabla">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Restricciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not Null
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unique
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-increment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto Increment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricciones-de-varias-columnas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricciones de varias columnas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nombrar-restricciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nombrar restricciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="creacion-de-tablas">Creacion de tablas</h1>
+<p>En esta sección, veremos cómo crear tablas en SQL, cómo definir sus atributos y restricciones. Más adelante, nos centraremos en la modificación y eliminación de tablas según sea necesario. Además, se presentarán buenas prácticas para la creación de tablas y se discutirán algunos errores comunes que se deben evitar al trabajar con ellas.</p>
+<p>En primer lugar, incidir en que solo se hablará de la creación de tablas y no del contenido de las mismas, veremos más adelante las sentencias DML (Data Manipulation Language) que nos permitirán insertar, actualizar y eliminar datos de las tablas creadas.</p>
+<h2 id="estructura-de-una-tabla">Estructura de una tabla</h2>
+<p>Es importante mencionar que una tabla en una base de datos relacional está compuesta por filas y columnas. Cada fila representa un registro único, mientras que cada columna representa un atributo o campo de ese registro. La estructura de una tabla se define mediante la especificación de sus columnas, tipos de datos y restricciones.</p>
+<p>La definición de una tabla en SQL se realiza mediante la sentencia <code>CREATE TABLE</code>, donde se especifican los nombres de las columnas, sus tipos de datos y las restricciones que se aplicarán a cada una de ellas.</p>
+<h3 id="create-table">Create Table</h3>
+<p>Una sentencia básica para crear una tabla en SQL tiene la siguiente estructura:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="k">IF</span><span class="w"> </span><span class="p">[</span><span class="k">NOT</span><span class="p">]</span><span class="w"> </span><span class="k">EXISTS</span><span class="p">]</span><span class="w"> </span><span class="n">esquema</span><span class="p">.</span><span class="n">nombre_tabla</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">columna1</span><span class="w"> </span><span class="n">tipo_dato</span><span class="w"> </span><span class="p">[</span><span class="n">restricciones</span><span class="p">],</span>
+<span class="w">    </span><span class="n">columna2</span><span class="w"> </span><span class="n">tipo_dato</span><span class="w"> </span><span class="p">[</span><span class="n">restricciones</span><span class="p">],</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="n">columnaN</span><span class="w"> </span><span class="n">tipo_dato</span><span class="w"> </span><span class="p">[</span><span class="n">restricciones</span><span class="p">]</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Donde:</p>
+<ul>
+<li><code>IF [NOT] EXISTS</code> es una cláusula opcional que permite crear la tabla solo si no existe previamente en la base de datos.</li>
+<li><code>esquema</code> es el nombre del esquema al que pertenece la tabla. Si no se especifica, se utilizará el esquema predeterminado.</li>
+<li><code>nombre_tabla</code> es el nombre que se le asignará a la tabla.</li>
+<li><code>columna1</code>, <code>columna2</code>, ..., <code>columnaN</code> son los nombres de las columnas que se definirán en la tabla.</li>
+<li><code>tipo_dato</code> es el tipo de dato que se asignará a cada columna, como <code>INT</code>, <code>VARCHAR</code>, <code>DATE</code>, entre otros.</li>
+<li><code>restricciones</code> son las reglas que se aplicarán a cada columna, como <code>PRIMARY KEY</code>, <code>NOT NULL</code>, <code>UNIQUE</code>, entre otras.</li>
+</ul>
+<p>Podemos diferenciar que hay que indicar el nombre de la tabla y sus atributos, así como el tipo de dato de cada atributo y las restricciones que se aplicarán a cada uno de ellos.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>En MySQl, los nombres de las tablas deben ser únicos en un mismo esquema (BD); además de que deben empezar por una letra y pueden contener letras, números y guiones bajos. No se permiten espacios ni caracteres especiales en los nombres de las tablas.</p>
+</div>
+<p>En el caso de los nombres de las columnas, también deben ser únicos dentro de una misma tabla y seguir las mismas reglas que los nombres de las tablas.</p>
+<h3 id="atributos">Atributos</h3>
+<p>Habrás podido ver que cada atributo tiene un tipo de dato específico, que define el tipo de información que se puede almacenar en esa columna. Algunos de los tipos de datos más comunes en SQL son:</p>
+<ul>
+<li><code>INT</code>: para almacenar números enteros.</li>
+<li><code>VARCHAR(n)</code>: para almacenar cadenas de texto de longitud variable, donde <code>n</code> es el número máximo de caracteres permitidos.</li>
+<li><code>DATE</code>: para almacenar fechas en formato <code>YYYY-MM-DD</code>.</li>
+<li><code>DECIMAL(p, s)</code>: para almacenar números decimales, donde <code>p</code> es la precisión total y <code>s</code> es la escala (número de dígitos a la derecha del punto decimal).</li>
+<li><code>BOOLEAN</code>: para almacenar valores booleanos (verdadero o falso).</li>
+<li><code>TEXT</code>: para almacenar cadenas de texto de longitud variable, sin un límite específico.</li>
+<li><code>TIMESTAMP</code>: para almacenar marcas de tiempo que incluyen fecha y hora.</li>
+<li><code>BLOB</code>: para almacenar datos binarios, como imágenes o archivos.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Existe también el tipo de dato <code>VARCHAR2</code> en algunas bases de datos, como Oracle, que es similar a <code>VARCHAR</code>, pero con algunas diferencias en cuanto a la gestión del almacenamiento y la longitud máxima permitida.</p>
+</div>
+<p>Existen otros tipos de datos específicos para cada sistema de gestión de bases de datos (SGBD), por lo que es importante consultar la documentación del SGBD que se esté utilizando para conocer los tipos de datos disponibles y sus características.</p>
+<p>Es importante elegir el tipo de dato adecuado para cada atributo, ya que esto afectará el rendimiento y la eficiencia del almacenamiento de datos en la base de datos. Además, algunos tipos de datos pueden tener restricciones adicionales, como el tamaño máximo permitido o la necesidad de especificar una precisión y escala para los números decimales.</p>
+<p>A la hora de seleccionar el tipo de dato para un atributo, es recomendable tener en cuenta el tipo de información que se almacenará en esa columna y las operaciones que se realizarán sobre ella. Por ejemplo, si se espera almacenar solo números enteros positivos, se puede utilizar el tipo de dato <code>INT UNSIGNED</code>, mientras que si se espera almacenar texto de longitud variable, se puede utilizar <code>VARCHAR(n)</code>.</p>
+<h3 id="restricciones">Restricciones</h3>
+<p>Las restricciones son reglas que se aplican a los atributos de una tabla para garantizar la integridad de los datos y evitar inconsistencias. Algunas de las restricciones más comunes en SQL son:</p>
+<ul>
+<li><code>CLAVES</code>: Indican que un atributo es una clave primaria o foránea, lo que garantiza la unicidad y la integridad referencial de los datos.</li>
+<li><code>NOT NULL</code>: Indica que un atributo no puede contener valores nulos, lo que garantiza que siempre se proporcionará un valor para esa columna.</li>
+<li><code>DEFAULT</code>: Permite establecer un valor predeterminado para un atributo en caso de que no se proporcione un valor al insertar un registro.</li>
+<li><code>CHECK</code>: Permite definir una condición que debe cumplirse para que un valor sea válido en un atributo.</li>
+<li><code>UNIQUE</code>: Garantiza que los valores de un atributo sean únicos en toda la tabla, evitando duplicados. Es una clave candidata que no es clave primaria.</li>
+<li><code>AUTO_INCREMENT</code>: Permite que un atributo numérico se incremente automáticamente con cada nuevo registro insertado, lo que es útil para generar identificadores únicos.</li>
+</ul>
+<p>Vamos a ver en detalle cada una de estas restricciones y cómo se aplican en la creación de tablas en SQL.</p>
+<h4 id="claves">Claves</h4>
+<p>Una clave es un atributo o conjunto de atributos que se utilizan para identificar de manera única un registro en una tabla. Existen dos tipos principales de claves: la clave primaria y la clave foránea.</p>
+<p><strong>PRIMARY KEY</strong>: Es un atributo o conjunto de atributos que identifica de manera única cada registro en una tabla. Una tabla solo puede tener una clave primaria, y los valores de esta clave no pueden ser nulos ni duplicados. La clave primaria se define al crear la tabla mediante la sentencia <code>CREATE TABLE</code>, utilizando la cláusula <code>PRIMARY KEY</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>En MYSQL, solo se puede definir una clave primaria por tabla, pero se pueden definir claves candidatas que no sean clave primaria, utilizando la restricción <code>UNIQUE</code>. Estas claves candidatas pueden ser utilizadas para identificar registros de manera única, pero no tienen la misma prioridad que la clave primaria.</p>
+</div>
+<p><strong>FOREIGN KEY</strong>: Es un atributo o conjunto de atributos que establece una relación entre dos tablas. Una clave foránea en una tabla hace referencia a la clave primaria de otra tabla, lo que permite mantener la integridad referencial entre ambas tablas. La clave foránea se define al crear la tabla mediante la sentencia <code>CREATE TABLE</code>, utilizando la cláusula <code>FOREIGN KEY</code>. Veamos la sintaxis:</p>
+<div class="highlight"><pre><span></span><code><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">columna_foranea</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">tabla_referenciada</span><span class="p">(</span><span class="n">columna_referenciada</span><span class="p">)</span>
+</code></pre></div>
+<p>Vemos como se hare referencia a la tabla y columna que se está referenciando, de manera que se pueda mantener la integridad referencial entre ambas tablas. Además, se pueden definir acciones adicionales para la clave foránea, como <code>ON DELETE</code> y <code>ON UPDATE</code>, que especifican qué hacer cuando se elimina o actualiza un registro en la tabla referenciada. Veamos con más detalle estas acciones:</p>
+<ul>
+<li><code>ON DELETE CASCADE</code>: Si se elimina un registro en la tabla referenciada, se eliminarán automáticamente todos los registros relacionados en la tabla que contiene la clave foránea.</li>
+<li><code>ON DELETE SET NULL</code>: Si se elimina un registro en la tabla referenciada, los valores de la clave foránea en la tabla que contiene la clave foránea se establecerán en nulo.</li>
+<li><code>ON DELETE RESTRICT</code>: Si se intenta eliminar un registro en la tabla referenciada que tiene registros relacionados en la tabla que contiene la clave foránea, se producirá un error y no se permitirá la eliminación.</li>
+<li><code>ON UPDATE CASCADE</code>: Si se actualiza un valor de la clave primaria en la tabla referenciada, se actualizarán automáticamente los valores correspondientes en la tabla que contiene la clave foránea.</li>
+<li><code>ON UPDATE SET NULL</code>: Si se actualiza un valor de la clave primaria en la tabla referenciada, los valores de la clave foránea en la tabla que contiene la clave foránea se establecerán en nulo.</li>
+<li><code>ON UPDATE RESTRICT</code>: Si se intenta actualizar un valor de la clave primaria en la tabla referenciada que tiene registros relacionados en la tabla que contiene la clave foránea, se producirá un error y no se permitirá la actualización.</li>
+</ul>
+<h4 id="not-null">Not Null</h4>
+<p>La restricción <code>NOT NULL</code> se utiliza para garantizar que un atributo no pueda contener valores nulos. Esto significa que al insertar un registro en la tabla, se debe proporcionar un valor para ese atributo, y no se permitirá dejarlo vacío. La restricción <code>NOT NULL</code> se define al crear la tabla mediante la sentencia <code>CREATE TABLE</code>, utilizando la cláusula <code>NOT NULL</code>.</p>
+<p>En caso de establecer un valor <code>NOT NULL</code> para un atributo, se debe tener en cuenta que este valor no puede ser nulo ni vacío, y que se debe proporcionar un valor válido al insertar un registro en la tabla. Si se intenta insertar un registro sin proporcionar un valor para un atributo con la restricción <code>NOT NULL</code>, se producirá un error y no se permitirá la inserción del registro.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>En el caso de una clave primaria, se establece automáticamente como <code>NOT NULL</code>.</p>
+</div>
+<h4 id="default">Default</h4>
+<p>La restricción <code>DEFAULT</code> se utiliza para establecer un valor predeterminado para un atributo en caso de que no se proporcione un valor al insertar un registro. Esto significa que si no se especifica un valor para ese atributo, se utilizará el valor predeterminado definido en la tabla.</p>
+<p>Esta restricción se puede utilizar junto a la restricción <code>NOT NULL</code>, de manera que si no se proporciona un valor para ese atributo, se utilizará el valor predeterminado en lugar de permitir un valor nulo.</p>
+<h4 id="check">Check</h4>
+<p>La restricción <code>CHECK</code> se utiliza para definir una condición que debe cumplirse para que un valor sea válido en un atributo. Esto significa que al insertar o actualizar un registro en la tabla, se verificará si el valor proporcionado cumple con la condición definida en la restricción <code>CHECK</code>. Si el valor no cumple con la condición, se producirá un error y no se permitirá la inserción o actualización del registro.</p>
+<p>En caso de no cumplir con la condición definida en la restricción <code>CHECK</code>, se producirá un error y no se permitirá la inserción o actualización del registro. Esto garantiza que los valores almacenados en la tabla cumplan con ciertas reglas o criterios específicos, lo que ayuda a mantener la integridad de los datos.</p>
+<p>Veamos un ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">empleados</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">nombre</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">salario</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">salario</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>En este ejemplo vemos como el salario de un empleado no puede ser negativo, ya que se ha definido una restricción <code>CHECK</code> que verifica que el valor del salario sea mayor o igual a cero. Si se intenta insertar un registro con un salario negativo, se producirá un error y no se permitirá la inserción del registro.</p>
+<h4 id="unique">Unique</h4>
+<p>La restricción <code>UNIQUE</code> se utiliza para garantizar que los valores de un atributo sean únicos en toda la tabla, evitando duplicados. Esto significa que al insertar o actualizar un registro en la tabla, se verificará si el valor proporcionado ya existe en esa columna. Si el valor ya existe, se producirá un error y no se permitirá la inserción o actualización del registro.</p>
+<p>Tiene un comportamiento similar a la clave primaria, pero a diferencia de esta, una tabla puede tener múltiples restricciones <code>UNIQUE</code> en diferentes columnas. Además, los valores de una columna con la restricción <code>UNIQUE</code> pueden ser nulos, mientras que los valores de una columna con la restricción <code>PRIMARY KEY</code> no pueden ser nulos.</p>
+<p>Es importante tener en cuenta que la restricción <code>UNIQUE</code> no garantiza la integridad referencial entre tablas, ya que no establece una relación entre ellas. Para garantizar la integridad referencial, se debe utilizar la restricción <code>FOREIGN KEY</code>.</p>
+<h3 id="auto-increment">Auto Increment</h3>
+<p>La restricción <code>AUTO_INCREMENT</code> se utiliza para permitir que un atributo numérico se incremente automáticamente con cada nuevo registro insertado. Esto es útil para generar identificadores únicos de manera automática, sin necesidad de especificar un valor para ese atributo al insertar un registro.</p>
+<p>Auto Increment se utiliza comúnmente en columnas que actúan como claves primarias, ya que garantiza que cada registro tenga un identificador único. Al insertar un nuevo registro en la tabla, el valor de la columna con la restricción <code>AUTO_INCREMENT</code> se incrementará automáticamente en uno, generando un nuevo valor único para ese registro.</p>
+<p>Es importante mencionar que la restricción <code>AUTO_INCREMENT</code> solo se puede aplicar a columnas de tipo numérico, como <code>INT</code> o <code>BIGINT</code>. Además, solo se puede aplicar a una columna por tabla, y esta columna debe ser la clave primaria o tener una restricción <code>UNIQUE</code>.</p>
+<h3 id="restricciones-de-varias-columnas">Restricciones de varias columnas</h3>
+<p>Por último, es importante mencionar que algunas restricciones pueden aplicarse a varias columnas de una tabla. Por ejemplo, se puede definir una clave primaria compuesta por varias columnas, lo que garantiza que la combinación de valores en esas columnas sea única en toda la tabla.</p>
+<p>Por ejemplo si queremos establecer una clave primaria compuesta por las columnas <code>columna1</code> y <code>columna2</code>, podemos hacerlo de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ejemplo</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">columna1</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">columna2</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">columna3</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">columna1</span><span class="p">,</span><span class="w"> </span><span class="n">columna2</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Como vemos en este ejemplo, la combinación de valores en las columnas <code>columna1</code> y <code>columna2</code> debe ser única en toda la tabla, lo que garantiza que no se puedan insertar registros con los mismos valores en esas columnas.</p>
+<h3 id="nombrar-restricciones">Nombrar restricciones</h3>
+<p>En SQL, es posible nombrar las restricciones al momento de crearlas, lo que facilita su identificación y gestión en la base de datos. Al nombrar una restricción, se le asigna un nombre único que se puede utilizar para referirse a ella en futuras operaciones, como la modificación o eliminación de la restricción.</p>
+<p>Una nomenclatura clara, permite identificar fácilmente la restricción y su propósito, lo que facilita la comprensión del diseño de la base de datos y la gestión de las restricciones en el futuro.</p>
+<p>Veamos un ejemplo de nombrar una restricción al crear una tabla:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">empleados</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">nombre</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">salario</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">chk_salario</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">salario</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Como vemos se utilliza la palabra reservada <code>CONSTRAINT</code> seguida del nombre de la restricción, en este caso <code>chk_salario</code>, y luego se define la restricción <code>CHECK</code> que verifica que el salario sea mayor o igual a cero.</p>
+<p>Esta restricción se puede utilizar tanto en la utilización de un check como de clave foránea y/o clave primaria, de manera que se puede nombrar cualquier restricción que se defina en la tabla.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Es importante mencionar que el nombre de la restricción debe ser único dentro de la base de datos, y no se pueden utilizar nombres duplicados para diferentes restricciones. Además, algunos sistemas de gestión de bases de datos (SGBD) pueden tener restricciones adicionales sobre los nombres de las restricciones, como la longitud máxima permitida o los caracteres válidos.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../creacion-tablas-introduccion/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introducción">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introducción
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../creacion-tablas-ejemplo/" class="md-footer__link md-footer__link--next" aria-label="Next: Ejemplo de Creación de tablas">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Ejemplo de Creación de tablas
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Víctor Suárez. IES Puebla de Vicar.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

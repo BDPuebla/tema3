@@ -2,38 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://BDPuebla.github.io/tema3/</loc>
-         <lastmod>2026-10-19</lastmod>
+         <lastmod>2026-10-21</lastmod>
+    </url>
+    <url>
+         <loc>https://BDPuebla.github.io/tema3/creacion-tablas-ejemplo/</loc>
+         <lastmod>2026-10-21</lastmod>
+    </url>
+    <url>
+         <loc>https://BDPuebla.github.io/tema3/creacion-tablas-introduccion/</loc>
+         <lastmod>2026-10-21</lastmod>
+    </url>
+    <url>
+         <loc>https://BDPuebla.github.io/tema3/creacion-tablas/</loc>
+         <lastmod>2026-10-21</lastmod>
     </url>
     <url>
          <loc>https://BDPuebla.github.io/tema3/diseno-bd-atributos/</loc>
-         <lastmod>2026-10-19</lastmod>
+         <lastmod>2026-10-21</lastmod>
     </url>
     <url>
          <loc>https://BDPuebla.github.io/tema3/diseno-bd-introduccion/</loc>
-         <lastmod>2026-10-19</lastmod>
+         <lastmod>2026-10-21</lastmod>
     </url>
     <url>
          <loc>https://BDPuebla.github.io/tema3/diseno-bd-tablas/</loc>
-         <lastmod>2026-10-19</lastmod>
+         <lastmod>2026-10-21</lastmod>
     </url>
     <url>
          <loc>https://BDPuebla.github.io/tema3/introduccion/</loc>
-         <lastmod>2026-10-19</lastmod>
+         <lastmod>2026-10-21</lastmod>
     </url>
     <url>
          <loc>https://BDPuebla.github.io/tema3/referencias/</loc>
-         <lastmod>2026-10-19</lastmod>
+         <lastmod>2026-10-21</lastmod>
     </url>
     <url>
          <loc>https://BDPuebla.github.io/tema3/sql-introduccion/</loc>
-         <lastmod>2026-10-19</lastmod>
+         <lastmod>2026-10-21</lastmod>
     </url>
     <url>
          <loc>https://BDPuebla.github.io/tema3/sql-sentencias-definicion-datos/</loc>
-         <lastmod>2026-10-19</lastmod>
+         <lastmod>2026-10-21</lastmod>
     </url>
     <url>
          <loc>https://BDPuebla.github.io/tema3/sql-tipo-sentencias/</loc>
-         <lastmod>2026-10-19</lastmod>
+         <lastmod>2026-10-21</lastmod>
     </url>
 </urlset>
