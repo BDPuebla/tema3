@@ -27,9 +27,15 @@ nav:
       - Introducción: creacion-tablas-introduccion.md
       - Creación de tablas: creacion-tablas.md
       - Ejemplo de Creación de tablas: creacion-tablas-ejemplo.md
+  - Modificación de tablas:
+      - Introducción: modificacion-tablas-introduccion.md
+      - Modificación de tablas: modificacion-tablas.md
+      - Ejemplo de Modificación de tablas: modificacion-tablas-ejemplo.md
+  - Eliminación de tablas:
+      - Borrar tablas: eliminacion-tablas.md
   - Referencias: referencias.md
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-copyright: Copyright &copy; 2026 Víctor Suárez. IES Puebla de Vicar.  
+copyright: Copyright &copy; 2026 Víctor Suárez. IES La Puebla de Vicar.  
