@@ -33,6 +33,10 @@ nav:
       - Ejemplo de Modificación de tablas: modificacion-tablas-ejemplo.md
   - Eliminación de tablas:
       - Borrar tablas: eliminacion-tablas.md
+  - Índices y Sinónimos:
+      - Introducción: indices-sinonimos-introduccion.md
+      - Índices: indices.md
+      - Sinónimos: sinonimos.md
   - Referencias: referencias.md
 markdown_extensions:
   - admonition
